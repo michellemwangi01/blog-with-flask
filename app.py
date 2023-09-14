@@ -55,7 +55,7 @@ def home():
     return render_template('home.html', posts=blogposts, title='Home Page')
 
 
-@app.route("/about")  # the route that allows navigateion to the different pages of the website. This defines the
+@app.route("/about")  # the route that allows navigation to the different pages of the website. This defines the
 # root or the home page of the app. Routes for the specific pages are handled using the route decorator.
 def about():
     return render_template('about.html')
@@ -65,7 +65,7 @@ def about():
 def register():
     registration_form = RegistrationForm()
     if registration_form.validate_on_submit():
-        flash(f'Account created for {registration_form.username.data}!', category='success')
+        flash(f'Account created for {registration_form.username.data}!', 'success')
         return redirect(url_for('home'))
     return render_template('register.html', title='Register', form=registration_form)
 
